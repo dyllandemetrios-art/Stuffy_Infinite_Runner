@@ -197,11 +197,28 @@ MonoBehaviour:
   _isSliding: 0
   _isSlidingDown: 0
   _isJumping: 0
+  _isDead: 0
 --- !u!95 &160425015 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 675970171637674186, guid: 0d7bdd2942440db47b015090a6133bd7, type: 3}
   m_PrefabInstance: {fileID: 1628067486148296561}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &160425016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160425012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34493ed984364298bb1806fb03566134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCollisionController
+  _sphereCenter: {x: 0, y: 1, z: 0}
+  _sphereRadius: 1
+  _shrinkSphereCenter: {x: 0, y: 0.5, z: 0}
+  _shrinkSphereRadius: 0.7
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,6 +574,7 @@ MonoBehaviour:
   _translationSpeed: 3
   _activeChunkCount: 5
   _behindChunkCount: 1
+  _stopDelayOnDamage: 0.2
   _chunksPool:
   - {fileID: -5393441323806901000, guid: ab5e608ff7dcc7745b6926680e993e8a, type: 3}
 --- !u!4 &1994810971
@@ -642,6 +660,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6109831300115640330, guid: 0d7bdd2942440db47b015090a6133bd7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 160425014}
+    - targetCorrespondingSourceObject: {fileID: 6109831300115640330, guid: 0d7bdd2942440db47b015090a6133bd7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 160425016}
   m_SourcePrefab: {fileID: 100100000, guid: 0d7bdd2942440db47b015090a6133bd7, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

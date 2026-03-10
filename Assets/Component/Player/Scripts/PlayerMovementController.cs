@@ -1,4 +1,5 @@
-﻿﻿using System.Collections;
+﻿﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -25,11 +26,41 @@ public class PlayerMovementController : MonoBehaviour
     [SerializeField] private bool _isSliding;
     [SerializeField] private bool _isSlidingDown;
     [SerializeField] private bool _isJumping;
+    [SerializeField] private bool _isDead;
     
     private Coroutine _slideCoroutine;
     
+    private void Start()
+    {
+        EventSystem.OnPlayerLifeUpdated += HandlePlayerLifeUpdated;
+    }
+    
+    private void OnDestroy()
+    {
+        EventSystem.OnPlayerLifeUpdated -= HandlePlayerLifeUpdated;
+    }
+
+    private void HandlePlayerLifeUpdated(int playerLife)
+    {
+        if (playerLife > 0)
+        {
+            _animator.SetTrigger("TakeDamage");
+            
+            return;
+        }
+        
+        StopAllCoroutines();
+        _animator.SetTrigger("Dead");
+        _isDead = true;
+    }
+
     public void Update()
     {
+        if (_isDead)
+        {
+            return;
+        }
+        
         HandleJump();
         HandleSlide();
         HandleSlideDown();
@@ -166,6 +197,7 @@ public class PlayerMovementController : MonoBehaviour
     {
         _isSlidingDown = true;
         _animator.SetBool("IsSlidingDown", true);
+        EventSystem.OnPlayerSlideDown?.Invoke(true);
         
         var slideTimer = 0f;
 
@@ -177,5 +209,6 @@ public class PlayerMovementController : MonoBehaviour
         
         _isSlidingDown = false;
         _animator.SetBool("IsSlidingDown", false);
+        EventSystem.OnPlayerSlideDown?.Invoke(false);
     }
 }

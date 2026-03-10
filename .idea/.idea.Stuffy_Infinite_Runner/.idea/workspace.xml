@@ -5,81 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92330fb4-07b2-4e68-a03c-541aba764df4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Component/EventSystem.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Component/EventSystem/EventSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Component/EventSystem/EventSystem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Component/Life.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Component/Life/LifeController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Component/Life/LifeController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Component/Life/UILifeView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Component/Life/UILifeView.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Component/Player/Scripts/PlayerCollisionController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Component/Player/Scripts/PlayerCollisionController.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Stuffy_Infinite_Runner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Stuffy_Infinite_Runner/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Materials/bark01_bottom.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Materials/bark01_bottom.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Materials/dirt01.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Materials/dirt01.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Materials/grass01.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Materials/grass01.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Materials/grassmesh.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Materials/grassmesh.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Materials/skyMaterial.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Materials/skyMaterial.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Materials/tree_branches.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Materials/tree_branches.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Meshes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Meshes/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Meshes/Prefabs/grass01.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Meshes/Prefabs/grass01.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Meshes/Prefabs/tree_1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Meshes/Prefabs/tree_1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Meshes/Source.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Meshes/Source/grass01.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Meshes/Source/grass01.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Meshes/Source/tree_1.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Meshes/Source/tree_1.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/PostProcessing Profile.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/PostProcessing Profile.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Scenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Scenes/New Terrain.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Scenes/New Terrain.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Scenes/assets.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Scenes/assets.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Scenes/demoScene_free.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Scenes/demoScene_free.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/StandardNoCulling.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/StandardNoCulling.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Textures/bark01_bottom.tga" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Textures/bark01_bottom.tga.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Textures/dirt01.tga" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Textures/dirt01.tga.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Textures/grass01.tga" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Textures/grass01.tga.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Textures/grass01_b.tga" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Textures/grass01_b.tga.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Textures/grassmesh.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Textures/grassmesh.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Textures/tree_branches.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Fantasy Forest Environment Free Sample/Textures/tree_branches.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Input Sprites for TextMesh Pro.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Input Sprites for TextMesh Pro/all input icons larger size.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Input Sprites for TextMesh Pro/all input icons larger size.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Input Sprites for TextMesh Pro/all input icons same size.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Input Sprites for TextMesh Pro/all input icons same size.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Input Sprites for TextMesh Pro/all_input.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Input Sprites for TextMesh Pro/all_input.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Input Sprites for TextMesh Pro/demo scene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Input Sprites for TextMesh Pro/demo scene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Input Sprites for TextMesh Pro/please consider checking out my other assets.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Input Sprites for TextMesh Pro/please consider checking out my other assets.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Input Sprites for TextMesh Pro/readme.rtf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Input Sprites for TextMesh Pro/readme.rtf.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/_TerrainAutoUpgrade.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/_TerrainAutoUpgrade/layer_dirt01b3407d0e55802f81.terrainlayer" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/_TerrainAutoUpgrade/layer_dirt01b3407d0e55802f81.terrainlayer.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/_TerrainAutoUpgrade/layer_grass01_bb3407d0e55802f81.terrainlayer" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/_TerrainAutoUpgrade/layer_grass01_bb3407d0e55802f81.terrainlayer.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/_TerrainAutoUpgrade/layer_grass01b3407d0e55802f81.terrainlayer" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/_TerrainAutoUpgrade/layer_grass01b3407d0e55802f81.terrainlayer.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/Chunk0.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/Chunk0.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Scripts/ChunkController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Scripts/ChunkController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Scripts/ObstacleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Scripts/ObstacleController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/Player/Animations/PlayerAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/Player/Animations/PlayerAnimator.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/Player/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/Player/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/Player/Scripts/PlayerMovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/Player/Scripts/PlayerMovementController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GamePlay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GamePlay.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,6 +27,12 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Component/EventSystem/EventSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Component/Life/LifeController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Component/Life/UILifeView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Component/Player/Scripts/PlayerCollisionController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
     <commands />
@@ -178,6 +122,9 @@
       <workItem from="1772618136959" duration="24000" />
       <workItem from="1772647878462" duration="1248000" />
       <workItem from="1772700648147" duration="3243000" />
+      <workItem from="1772813047745" duration="610000" />
+      <workItem from="1772862825235" duration="2550000" />
+      <workItem from="1773134335208" duration="1434000" />
     </task>
     <servers />
   </component>
