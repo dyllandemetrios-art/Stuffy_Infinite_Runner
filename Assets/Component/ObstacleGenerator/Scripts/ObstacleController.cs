@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -13,35 +12,49 @@ public class ObstacleController : MonoBehaviour
     
     [Header("Components")]
     [SerializeField] private ChunkController[] _chunksPool;
+
+    [Header("Speed Up")] 
+    [SerializeField, Tooltip("Interval in seconds between each speed increases")] private float _speedUpInterval = 15f;
+    [SerializeField, Tooltip("Speed increase applied on each interval")] private float _speedUpIncrease = 1.5f;
     
     private readonly List<ChunkController> _instancedChunks = new();
     private float _baseTranslationSpeed;
     
     private float _stopDelayTimer;
     private bool _stopped;
+    private bool _inGameState;
+
+    private GameState _gameState;
+    private int _lastSpeedUpTime; // Last time when speed up was applied to avoid multiple speed ups on same second interval.
     
+    private void Awake()
+    {
+        EventSystem.OnStateChanged += HandleStateChanged;
+    }
+
     private void Start()
     {
         _baseTranslationSpeed = _translationSpeed;
+        _translationSpeed = 0;
         
-        EventSystem.OnPlayerLifeUpdated += HandlePlayerLifeUpdated;
         AddBaseChunk();
     }
     
     private void OnDestroy()
     {
         EventSystem.OnPlayerLifeUpdated -= HandlePlayerLifeUpdated;
+        EventSystem.OnStateChanged -= HandleStateChanged;
     }
 
     private void Update()
     {
-        ResetMovementAfterDelay();
-        
-        foreach (var chunk in _instancedChunks)
+        if (!_inGameState)
         {
-            chunk.transform.Translate(Vector3.back * _translationSpeed * Time.deltaTime);
+            return;
         }
-
+        
+        ResetMovementAfterDelay();
+        TranslateChunks();
         UpdateChunks();
     }
 
@@ -56,6 +69,22 @@ public class ObstacleController : MonoBehaviour
             _stopped = false;
             _translationSpeed = _baseTranslationSpeed;
             _stopDelayTimer = 0f;
+        }
+    }
+    
+    private void TranslateChunks()
+    {
+        var gameTimer = _gameState.Timer;
+        if (gameTimer != 0 && gameTimer % _speedUpInterval == 0 && gameTimer != _lastSpeedUpTime)
+        {
+            _translationSpeed += _speedUpIncrease;
+            _baseTranslationSpeed = _translationSpeed;
+            _lastSpeedUpTime = gameTimer;
+        }
+        
+        foreach (var chunk in _instancedChunks)
+        {
+            chunk.transform.Translate(Vector3.back * (_translationSpeed * Time.deltaTime));
         }
     }
 
@@ -137,5 +166,20 @@ public class ObstacleController : MonoBehaviour
         }
         
         _translationSpeed = 0;
+    }
+    
+    private void HandleStateChanged(State newState)
+    {
+        if (newState is not GameState gameState)
+        {
+            EventSystem.OnPlayerLifeUpdated -= HandlePlayerLifeUpdated;
+            _inGameState = false;
+            return;
+        }
+
+        _gameState = gameState;
+        _translationSpeed = _baseTranslationSpeed;
+        EventSystem.OnPlayerLifeUpdated += HandlePlayerLifeUpdated;
+        _inGameState = true;
     }
 }

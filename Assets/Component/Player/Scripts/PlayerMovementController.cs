@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -26,18 +26,35 @@ public class PlayerMovementController : MonoBehaviour
     [SerializeField] private bool _isSliding;
     [SerializeField] private bool _isSlidingDown;
     [SerializeField] private bool _isJumping;
-    [SerializeField] private bool _isDead;
+    [SerializeField] private bool _locked;
     
     private Coroutine _slideCoroutine;
-    
-    private void Start()
+
+    private void Awake()
     {
-        EventSystem.OnPlayerLifeUpdated += HandlePlayerLifeUpdated;
+        EventSystem.OnStateChanged += HandleStateChanged;
+        _locked = true;
     }
     
     private void OnDestroy()
     {
         EventSystem.OnPlayerLifeUpdated -= HandlePlayerLifeUpdated;
+        EventSystem.OnStateChanged -= HandleStateChanged;
+    }
+    
+    private void HandleStateChanged(State newState)
+    {
+        if (newState is not GameState)
+        {
+            _locked = true;
+            StopAllCoroutines();
+            EventSystem.OnPlayerLifeUpdated -= HandlePlayerLifeUpdated;
+            return;
+        }
+        
+        _animator.SetTrigger("Running");
+        EventSystem.OnPlayerLifeUpdated += HandlePlayerLifeUpdated;
+        _locked = false;
     }
 
     private void HandlePlayerLifeUpdated(int playerLife)
@@ -45,18 +62,17 @@ public class PlayerMovementController : MonoBehaviour
         if (playerLife > 0)
         {
             _animator.SetTrigger("TakeDamage");
-            
             return;
         }
         
         StopAllCoroutines();
         _animator.SetTrigger("Dead");
-        _isDead = true;
+        _locked = true;
     }
 
     public void Update()
     {
-        if (_isDead)
+        if (_locked)
         {
             return;
         }
