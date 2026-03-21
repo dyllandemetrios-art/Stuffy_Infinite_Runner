@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92330fb4-07b2-4e68-a03c-541aba764df4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Component/EventSystem.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Component/EventSystem/EventSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Component/EventSystem/EventSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Component/Life.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Component/Life/LifeController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Component/Life/LifeController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Component/Life/UILifeView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Component/Life/UILifeView.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Component/Player/Scripts/PlayerCollisionController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Component/Player/Scripts/PlayerCollisionController.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Stuffy_Infinite_Runner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Stuffy_Infinite_Runner/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Scripts/ObstacleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Scripts/ObstacleController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/Player/Scripts/PlayerMovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/Player/Scripts/PlayerMovementController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/Chunk0.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/Chunk0.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GamePlay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GamePlay.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,7 +113,8 @@
       <workItem from="1772700648147" duration="3243000" />
       <workItem from="1772813047745" duration="610000" />
       <workItem from="1772862825235" duration="2550000" />
-      <workItem from="1773134335208" duration="1434000" />
+      <workItem from="1773134335208" duration="2029000" />
+      <workItem from="1774002822317" duration="723000" />
     </task>
     <servers />
   </component>
