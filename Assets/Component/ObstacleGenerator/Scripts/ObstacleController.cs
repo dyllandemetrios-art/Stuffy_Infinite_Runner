@@ -2,36 +2,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+/// <summary>Manages chunk spawning, despawning, translation, and progressive speed increases during a run.</summary>
 public class ObstacleController : MonoBehaviour
 {
     [Header("Parameters")]
-    [SerializeField, Tooltip("Translation speed of chunks in m/s")] private float _translationSpeed = 1f;
-    [SerializeField] private int _activeChunkCount = 5;
-    [SerializeField] private int _behindChunkCount = 1;
-    [SerializeField] private float _stopDelayOnDamage = 0.2f;
+    [SerializeField, Tooltip("Translation speed of chunks in m/s")] private float _translationSpeed = 3f;
+    [SerializeField] private int _activeChunkCount = 5;   // Number of chunks kept active ahead of the player.
+    [SerializeField] private int _behindChunkCount = 1;   // Number of passed chunks to keep before destroying them.
+    [SerializeField] private float _stopDelayOnDamage = 0.2f; // Duration in seconds the world stops moving after the player takes damage.
     
     [Header("Components")]
-    [SerializeField] private ChunkController[] _chunksPool;
+    [SerializeField] private ChunkController[] _chunksPool; // Pool of chunk prefabs randomly selected during spawn.
 
     [Header("Speed Up")] 
     [SerializeField, Tooltip("Interval in seconds between each speed increases")] private float _speedUpInterval = 15f;
     [SerializeField, Tooltip("Speed increase applied on each interval")] private float _speedUpIncrease = 1.5f;
     
-    private readonly List<ChunkController> _instancedChunks = new();
-    private float _baseTranslationSpeed;
+    private readonly List<ChunkController> _instancedChunks = new(); // Currently active chunk instances in the scene.
+    private float _baseTranslationSpeed; // Reference speed used to restore movement after a damage stop.
     
-    private float _stopDelayTimer;
-    private bool _stopped;
-    private bool _inGameState;
+    private float _stopDelayTimer; // Accumulates time elapsed since the movement stop was triggered.
+    private bool _stopped;         // True while the world is paused following a player collision.
+    private bool _inGameState;     // Tracks whether the game is currently in an active run.
 
-    private GameState _gameState;
-    private int _lastSpeedUpTime; // Last time when speed up was applied to avoid multiple speed ups on same second interval.
+    private GameState _gameState;    // Cached reference to read the run timer for speed up logic.
+    private int _lastSpeedUpTime;    // Last timer value at which a speed increase was applied, prevents duplicate triggers.
     
+    /// <summary>Subscribes to state change events on initialization.</summary>
     private void Awake()
     {
         EventSystem.OnStateChanged += HandleStateChanged;
     }
 
+    /// <summary>Stores the base speed and spawns the initial set of chunks at game start.</summary>
     private void Start()
     {
         _baseTranslationSpeed = _translationSpeed;
@@ -40,12 +43,14 @@ public class ObstacleController : MonoBehaviour
         AddBaseChunk();
     }
     
+    /// <summary>Unsubscribes from all events to prevent memory leaks.</summary>
     private void OnDestroy()
     {
         EventSystem.OnPlayerLifeUpdated -= HandlePlayerLifeUpdated;
         EventSystem.OnStateChanged -= HandleStateChanged;
     }
 
+    /// <summary>Drives movement, speed up logic, and chunk lifecycle each frame during GameState.</summary>
     private void Update()
     {
         if (!_inGameState)
@@ -58,6 +63,7 @@ public class ObstacleController : MonoBehaviour
         UpdateChunks();
     }
 
+    /// <summary>Restores movement speed after the damage stop delay has elapsed.</summary>
     private void ResetMovementAfterDelay()
     {
         if (!_stopped) 
@@ -72,6 +78,7 @@ public class ObstacleController : MonoBehaviour
         }
     }
     
+    /// <summary>Moves all active chunks backward and applies a speed increase at each interval.</summary>
     private void TranslateChunks()
     {
         var gameTimer = _gameState.Timer;
@@ -80,6 +87,7 @@ public class ObstacleController : MonoBehaviour
             _translationSpeed += _speedUpIncrease;
             _baseTranslationSpeed = _translationSpeed;
             _lastSpeedUpTime = gameTimer;
+            EventSystem.OnSpeedUpdated?.Invoke(_translationSpeed);
         }
         
         foreach (var chunk in _instancedChunks)
@@ -88,6 +96,7 @@ public class ObstacleController : MonoBehaviour
         }
     }
 
+    /// <summary>Destroys excess chunks behind the player and spawns new ones ahead to maintain active count.</summary>
     private void UpdateChunks()
     {
         List<ChunkController> behindChunks = new();
@@ -123,6 +132,7 @@ public class ObstacleController : MonoBehaviour
         }
     }
 
+    /// <summary>Spawns the initial set of chunks chained from the controller's position.</summary>
     private void AddBaseChunk()
     {
         for (int i = 0; i < _activeChunkCount; i++)
@@ -139,6 +149,7 @@ public class ObstacleController : MonoBehaviour
         }
     }
 
+    /// <summary>Instantiates a random chunk from the pool at the given world position.</summary>
     private ChunkController AddChunk(Vector3 position)
     {
         if (_chunksPool.Length == 0)
@@ -153,11 +164,13 @@ public class ObstacleController : MonoBehaviour
         return chunk;
     }
     
+    /// <summary>Returns the last chunk in the active list, used to chain new chunk spawn positions.</summary>
     private ChunkController LastActiveChunk()
     {
         return _instancedChunks[_instancedChunks.Count - 1];
     }
     
+    /// <summary>Stops world movement on player hit, or zeroes speed permanently on player death.</summary>
     private void HandlePlayerLifeUpdated(int playerLifeCount)
     {
         if (playerLifeCount > 0)
@@ -168,6 +181,7 @@ public class ObstacleController : MonoBehaviour
         _translationSpeed = 0;
     }
     
+    /// <summary>Activates or deactivates chunk management and movement based on the current game state.</summary>
     private void HandleStateChanged(State newState)
     {
         if (newState is not GameState gameState)
@@ -179,6 +193,7 @@ public class ObstacleController : MonoBehaviour
 
         _gameState = gameState;
         _translationSpeed = _baseTranslationSpeed;
+        EventSystem.OnSpeedUpdated?.Invoke(_translationSpeed);
         EventSystem.OnPlayerLifeUpdated += HandlePlayerLifeUpdated;
         _inGameState = true;
     }

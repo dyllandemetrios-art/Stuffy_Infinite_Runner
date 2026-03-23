@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>Handles player movement: lane sliding, jumping, and sliding down.</summary>
 public class PlayerMovementController : MonoBehaviour
 {
     [Header("Jump parameters")]
@@ -30,18 +31,21 @@ public class PlayerMovementController : MonoBehaviour
     
     private Coroutine _slideCoroutine;
 
+    /// <summary>Subscribes to state changes and locks movement until game starts.</summary>
     private void Awake()
     {
         EventSystem.OnStateChanged += HandleStateChanged;
         _locked = true;
     }
     
+    /// <summary>Unsubscribes from all events to prevent memory leaks.</summary>
     private void OnDestroy()
     {
         EventSystem.OnPlayerLifeUpdated -= HandlePlayerLifeUpdated;
         EventSystem.OnStateChanged -= HandleStateChanged;
     }
     
+    /// <summary>Locks or unlocks movement based on the current game state.</summary>
     private void HandleStateChanged(State newState)
     {
         if (newState is not GameState)
@@ -57,6 +61,7 @@ public class PlayerMovementController : MonoBehaviour
         _locked = false;
     }
 
+    /// <summary>Triggers damage or death animation based on remaining player life.</summary>
     private void HandlePlayerLifeUpdated(int playerLife)
     {
         if (playerLife > 0)
@@ -70,6 +75,7 @@ public class PlayerMovementController : MonoBehaviour
         _locked = true;
     }
 
+    /// <summary>Polls input each frame and dispatches to movement handlers.</summary>
     public void Update()
     {
         if (_locked)
@@ -82,6 +88,7 @@ public class PlayerMovementController : MonoBehaviour
         HandleSlideDown();
     }
 
+    /// <summary>Starts jump coroutine on up arrow press if not already jumping or sliding down.</summary>
     private void HandleJump()
     {
         if (Keyboard.current.upArrowKey.wasPressedThisFrame)
@@ -95,6 +102,7 @@ public class PlayerMovementController : MonoBehaviour
         }
     }
     
+    /// <summary>Moves player left or right between lanes on arrow key press.</summary>
     private void HandleSlide()
     {
         // Slide left
@@ -134,6 +142,7 @@ public class PlayerMovementController : MonoBehaviour
         }
     }
     
+    /// <summary>Starts slide down coroutine on down arrow press if not already sliding or jumping.</summary>
     private void HandleSlideDown()
     {
         if (Keyboard.current.downArrowKey.wasPressedThisFrame)
@@ -147,6 +156,7 @@ public class PlayerMovementController : MonoBehaviour
         }
     }
 
+    /// <summary>Moves player vertically using animation curves to simulate a smooth jump arc.</summary>
     private IEnumerator JumpCoroutine()
     {
         _isJumping = true;
@@ -189,6 +199,7 @@ public class PlayerMovementController : MonoBehaviour
         _animator.SetBool("IsJumping", false);
     }
 
+    /// <summary>Lerps player position toward the target lane over the slide duration.</summary>
     private IEnumerator SlideCoroutine(Transform target)
     {
         _isSliding = true;
@@ -209,6 +220,7 @@ public class PlayerMovementController : MonoBehaviour
         _isSliding = false;
     }
 
+    /// <summary>Triggers slide down state and notifies other systems via event for a fixed duration.</summary>
     private IEnumerator SlideDownCoroutine()
     {
         _isSlidingDown = true;

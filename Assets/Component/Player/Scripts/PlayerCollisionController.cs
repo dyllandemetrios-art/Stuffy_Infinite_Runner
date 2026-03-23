@@ -1,20 +1,22 @@
 ﻿using UnityEngine;
 
+/// <summary>Detects player collisions using an overlap sphere that shrinks when sliding down.</summary>
 public class PlayerCollisionController : MonoBehaviour
 {
     [Header("Parameters")] 
-    [SerializeField] private Vector3 _sphereCenter;
-    [SerializeField] private float _sphereRadius;
-    [SerializeField] private Vector3 _shrinkSphereCenter;
-    [SerializeField] private float _shrinkSphereRadius;
+    [SerializeField] private Vector3 _sphereCenter;       // Center offset of the normal collision sphere.
+    [SerializeField] private float _sphereRadius;         // Radius of the normal collision sphere.
+    [SerializeField] private Vector3 _shrinkSphereCenter; // Center offset of the reduced sphere used when sliding down.
+    [SerializeField] private float _shrinkSphereRadius;   // Radius of the reduced sphere used when sliding down.
     
-    private bool _isHit;
+    private bool _isHit; // Prevents firing multiple collision events while overlapping the same collider.
     
-    private Vector3 _currentSphereCenter;
-    private float _currentSphereRadius;
+    private Vector3 _currentSphereCenter; // Active sphere center, swapped on slide down.
+    private float _currentSphereRadius;   // Active sphere radius, swapped on slide down.
 
-    private Vector3 PlayerSpherePosition => transform.position + _currentSphereCenter;
+    private Vector3 PlayerSpherePosition => transform.position + _currentSphereCenter; // World position of the active sphere.
     
+    /// <summary>Initializes the active collider to normal size and subscribes to slide down events.</summary>
     private void Start()
     {
         _currentSphereCenter = _sphereCenter;
@@ -23,26 +25,35 @@ public class PlayerCollisionController : MonoBehaviour
         EventSystem.OnPlayerSlideDown += ShrinkCollider;
     }
     
+    /// <summary>Unsubscribes from events to prevent memory leaks.</summary>
     private void OnDestroy()
     {
         EventSystem.OnPlayerSlideDown -= ShrinkCollider;
     }
 
+    /// <summary>Checks for overlapping colliders each frame, fires collision or pickup event based on tag.</summary>
     private void Update()
     {
         Collider[] hitColliders = Physics.OverlapSphere(PlayerSpherePosition, _currentSphereRadius);
-        if (hitColliders.Length > 0 && !_isHit)
+
+        foreach (var hit in hitColliders)
         {
-            EventSystem.OnPlayerCollision?.Invoke();
-            _isHit = true;
+            if (hit.CompareTag("Pickup"))
+            {
+                hit.GetComponent<PickupController>()?.Collect();
+            }
+            else if (!_isHit)
+            {
+                EventSystem.OnPlayerCollision?.Invoke();
+                _isHit = true;
+            }
         }
 
         if (hitColliders.Length == 0)
-        {
             _isHit = false;
-        }
     }
 
+    /// <summary>Switches between normal and shrunk sphere dimensions based on slide down state.</summary>
     private void ShrinkCollider(bool isSlidingDown)
     {
         if (isSlidingDown)
@@ -57,6 +68,7 @@ public class PlayerCollisionController : MonoBehaviour
         }
     }
 
+    /// <summary>Draws all three spheres in the editor for collision debugging.</summary>
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
