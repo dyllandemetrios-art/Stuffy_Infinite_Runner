@@ -228,8 +228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e02e2964fee141a0ad44f1e5f761cf94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovementController
-  _jumpDuration: 0.5
-  _jumpHeight: 3
+  _jumpDuration: 0.9
+  _jumpHeight: 1.8
   _jumpCurve:
     serializedVersion: 2
     m_Curve:
@@ -278,7 +278,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _slideDuration: 1
+  _slideDuration: 0.12
   _slideTarget:
   - {fileID: 2120463797}
   - {fileID: 1597589008}
@@ -707,17 +707,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66eceebb0cf80b849858d085ae0c0efd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleController
-  _translationSpeed: 3
-  _activeChunkCount: 5
+  _translationSpeed: 7
+  _activeChunkCount: 6
   _behindChunkCount: 1
-  _stopDelayOnDamage: 0.6
+  _stopDelayOnDamage: 0.2
   _chunksPool:
-  - {fileID: -5393441323806901000, guid: ab5e608ff7dcc7745b6926680e993e8a, type: 3}
-  - {fileID: -5393441323806901000, guid: d2e2d4858e3c6f5499dbaeb4d8ca9b5d, type: 3}
-  - {fileID: -5393441323806901000, guid: f7cb9377332290442bff2189eb039015, type: 3}
-  - {fileID: -5393441323806901000, guid: f6d661649d233cd4a9b111b9dc0ab2c1, type: 3}
-  _speedUpInterval: 5
-  _speedUpIncrease: 1.5
+  - {fileID: 3412098169515730771, guid: 535bd07b9bd505f44bf1ce688792bb09, type: 3}
+  - {fileID: 3412098169515730771, guid: 8e2a33672197c7743866858bcdadbb83, type: 3}
+  - {fileID: 3412098169515730771, guid: 535bd07b9bd505f44bf1ce688792bb09, type: 3}
+  - {fileID: 3412098169515730771, guid: 8e2a33672197c7743866858bcdadbb83, type: 3}
+  _speedUpInterval: 15
+  _speedUpIncrease: 0.1
 --- !u!4 &1994810971
 Transform:
   m_ObjectHideFlags: 0
@@ -792,7 +792,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6109831300115640330, guid: 0d7bdd2942440db47b015090a6133bd7, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 6881970403414436528, guid: 0d7bdd2942440db47b015090a6133bd7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8374034284864977255, guid: 0d7bdd2942440db47b015090a6133bd7, type: 3}
       propertyPath: m_Name
@@ -800,7 +804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8374034284864977255, guid: 0d7bdd2942440db47b015090a6133bd7, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

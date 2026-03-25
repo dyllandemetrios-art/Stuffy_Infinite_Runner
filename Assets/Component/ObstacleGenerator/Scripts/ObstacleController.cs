@@ -82,7 +82,7 @@ public class ObstacleController : MonoBehaviour
     private void TranslateChunks()
     {
         var gameTimer = _gameState.Timer;
-        if (gameTimer != 0 && gameTimer % _speedUpInterval == 0 && gameTimer != _lastSpeedUpTime)
+        if (gameTimer != 0 && gameTimer % _speedUpInterval == 0 && gameTimer != _lastSpeedUpTime && !_stopped)
         {
             _translationSpeed += _speedUpIncrease;
             _baseTranslationSpeed = _translationSpeed;

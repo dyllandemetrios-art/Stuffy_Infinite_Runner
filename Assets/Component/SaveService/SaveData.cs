@@ -6,5 +6,7 @@
     {
         public int RunCount;
         public int BestTime;
+        
+        public float SlideSpeed = 1f;
     }
 }

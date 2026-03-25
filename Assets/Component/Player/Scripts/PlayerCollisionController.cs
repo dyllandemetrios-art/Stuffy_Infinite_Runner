@@ -46,6 +46,7 @@ public class PlayerCollisionController : MonoBehaviour
             {
                 EventSystem.OnPlayerCollision?.Invoke();
                 _isHit = true;
+                Debug.Log(hit.name);
             }
         }
 
