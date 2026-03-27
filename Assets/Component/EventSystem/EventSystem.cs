@@ -10,7 +10,7 @@ public static class EventSystem
     public static Action<float> OnPlayerHealed;       // Fired when the player collects a healing pickup.
     public static Action<float> OnSpeedUpdated;       // Fired when the chunk translation speed changes.
     public static Action<int> OnScoreUpdated;         // Fired each frame with the current score in metres.
-
+    public static Action<float> OnPlayerInvincibilityStarted; // Fired when invincibility starts, passes duration in seconds.
     
     public static Action<State> OnStateChanged;       // Fired when the state machine transitions to a new state.
 }

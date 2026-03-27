@@ -85,6 +85,7 @@ public class LifeController : MonoBehaviour
         }
 
         EventSystem.OnPlayerLifeUpdated?.Invoke((int)_currentHP);
+        EventSystem.OnPlayerInvincibilityStarted?.Invoke(_invincibilityDuration);
         StartCoroutine(InvincibilityCoroutine());
     }
 

@@ -14,9 +14,10 @@ public class ObstacleController : MonoBehaviour
     [Header("Components")]
     [SerializeField] private ChunkController[] _chunksPool; // Pool of chunk prefabs randomly selected during spawn.
 
-    [Header("Speed Up")] 
-    [SerializeField, Tooltip("Interval in seconds between each speed increases")] private float _speedUpInterval = 15f;
-    [SerializeField, Tooltip("Speed increase applied on each interval")] private float _speedUpIncrease = 1.5f;
+    [Header("Speed Up")]
+    [SerializeField] private float _maxTranslationSpeed = 14f;          // Speed cap in m/s (GDD: 14 m/s).
+    [SerializeField] private float _speedUpInterval = 15f;              // Seconds between each speed increase.
+    [SerializeField] private float _speedUpPercentage = 0.08f;          // Speed increase as a percentage of current speed (8% = smooth curve).
     
     private readonly List<ChunkController> _instancedChunks = new(); // Currently active chunk instances in the scene.
     private float _baseTranslationSpeed; // Reference speed used to restore movement after a damage stop.
@@ -82,12 +83,18 @@ public class ObstacleController : MonoBehaviour
     private void TranslateChunks()
     {
         var gameTimer = _gameState.Timer;
-        if (gameTimer != 0 && gameTimer % _speedUpInterval == 0 && gameTimer != _lastSpeedUpTime && !_stopped)
+        if (gameTimer != 0 && gameTimer % _speedUpInterval == 0 && gameTimer != _lastSpeedUpTime)
         {
-            _translationSpeed += _speedUpIncrease;
+            // Increase by percentage of current speed for a natural exponential curve
+            _translationSpeed += _translationSpeed * _speedUpPercentage;
+
+            // Apply speed cap
+            _translationSpeed = Mathf.Min(_translationSpeed, _maxTranslationSpeed);
             _baseTranslationSpeed = _translationSpeed;
             _lastSpeedUpTime = gameTimer;
+
             EventSystem.OnSpeedUpdated?.Invoke(_translationSpeed);
+            Debug.Log("[ObstacleController] Speed: " + _translationSpeed);
         }
         
         foreach (var chunk in _instancedChunks)
@@ -149,7 +156,7 @@ public class ObstacleController : MonoBehaviour
         }
     }
 
-    /// <summary>Instantiates a random chunk from the pool at the given world position.</summary>
+    /// <summary>Instantiates a weighted random chunk from the pool at the given world position.</summary>
     private ChunkController AddChunk(Vector3 position)
     {
         if (_chunksPool.Length == 0)
@@ -157,11 +164,32 @@ public class ObstacleController : MonoBehaviour
             Debug.LogError("No chunks in pool");
             return null;
         }
-        
-        var index = Random.Range(0, _chunksPool.Length);
-        ChunkController chunk = Instantiate(_chunksPool[index], position, Quaternion.identity);
-        
+
+        var chunk = Instantiate(GetWeightedRandomChunk(), position, Quaternion.identity);
         return chunk;
+    }
+
+    /// <summary>Selects a chunk prefab from the pool using weighted random, preventing two identical chunks in a row.</summary>
+    private ChunkController GetWeightedRandomChunk()
+    {
+        // Calculate total weight
+        int totalWeight = 0;
+        foreach (var chunk in _chunksPool)
+            totalWeight += chunk.SpawnWeight;
+
+        // Pick a random value in the total weight range
+        int random = Random.Range(0, totalWeight);
+
+        // Find the chunk that corresponds to this value
+        int cumulative = 0;
+        foreach (var chunk in _chunksPool)
+        {
+            cumulative += chunk.SpawnWeight;
+            if (random < cumulative)
+                return chunk;
+        }
+
+        return _chunksPool[0];
     }
     
     /// <summary>Returns the last chunk in the active list, used to chain new chunk spawn positions.</summary>

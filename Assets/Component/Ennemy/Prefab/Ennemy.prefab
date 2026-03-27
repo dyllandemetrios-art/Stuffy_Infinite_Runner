@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &209713765418010102
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8889116792927679930}
+  m_Layer: 0
+  m_Name: ThrowOrigin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8889116792927679930
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209713765418010102}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.71895385, y: -0.36067128, z: 0.48543575, w: 0.3425986}
+  m_LocalPosition: {x: -0.71086466, y: -0.5212305, z: 2.6303806}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8108323746471675384}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2889528518409267880
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58,12 +89,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6385866347945537360, guid: 4534b9cc6330aed499be54b02abf5283, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8889116792927679930}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9137032837993464747, guid: 4534b9cc6330aed499be54b02abf5283, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7977501828209573614}
   m_SourcePrefab: {fileID: 100100000, guid: 4534b9cc6330aed499be54b02abf5283, type: 3}
+--- !u!95 &828403310855104963 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2550935751187727211, guid: 4534b9cc6330aed499be54b02abf5283, type: 3}
+  m_PrefabInstance: {fileID: 2889528518409267880}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6256880955148675331 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9137032837993464747, guid: 4534b9cc6330aed499be54b02abf5283, type: 3}
@@ -82,4 +121,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnnemyController
   _projectile: {fileID: 8202313156966596449, guid: b8e103f11163e7c4d8535fcd4e56104f, type: 3}
-  _projectileThrowingInterval: 2
+  _throwingInterval: 0.5
+  _projectilesPerSalve: 1
+  _delayBeforeFirstThrow: 3
+  _delayBetweenProjectiles: 1
+  _delayBeforeProjectile: 0.8
+  _animator: {fileID: 828403310855104963}
+  _throwOrigin: {fileID: 8889116792927679930}
+--- !u!4 &8108323746471675384 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6385866347945537360, guid: 4534b9cc6330aed499be54b02abf5283, type: 3}
+  m_PrefabInstance: {fileID: 2889528518409267880}
+  m_PrefabAsset: {fileID: 0}
