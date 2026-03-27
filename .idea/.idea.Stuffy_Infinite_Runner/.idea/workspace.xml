@@ -6,36 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="92330fb4-07b2-4e68-a03c-541aba764df4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Stuffy_Infinite_Runner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Stuffy_Infinite_Runner/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/Ennemy/Animations/EnnemyAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/Ennemy/Animations/EnnemyAnimator.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/Ennemy/Prefab/Ennemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/Ennemy/Prefab/Ennemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/Ennemy/Prefab/Projectile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/Ennemy/Prefab/Projectile.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/Ennemy/Scripts/EnnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/Ennemy/Scripts/EnnemyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/Ennemy/Scripts/ProjectileController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/Ennemy/Scripts/ProjectileController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/BarrelsObstacle.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/BarrelsObstacle.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/CaseObstacle.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/CaseObstacle.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/CaseSlideObstacle.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/CaseSlideObstacle.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/Chunk0.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/Chunk0.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/Chunk1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/Chunk1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/Chunk2.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/Chunk2.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/ManholeObstacle.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/ManholeObstacle.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/PalletsObstacle.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/PalletsObstacle.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/PineObstacle.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/PineObstacle.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/TrashesObstacle.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/TrashesObstacle.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/WallTrashesObstacle.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/WallTrashesObstacle.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/Mobile_RPAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Mobile_RPAsset.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/ChunkEasy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/ChunkEasy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Scripts/ObstacleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Scripts/ObstacleController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +28,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Component/Life/UILifeView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Component/MainMenu/Scripts/UIMainMenuController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Scripts/PickupController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Component/Player/Scripts/PlayerBlinkController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Component/Player/Scripts/PlayerCollisionController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Component/SaveService/SaveData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Component/SaveService/SaveService.cs" root0="FORCE_HIGHLIGHTING" />
@@ -181,6 +155,7 @@
       <workItem from="1774434566155" duration="605000" />
       <workItem from="1774460817115" duration="2719000" />
       <workItem from="1774515295044" duration="4519000" />
+      <workItem from="1774603131788" duration="5448000" />
     </task>
     <servers />
   </component>

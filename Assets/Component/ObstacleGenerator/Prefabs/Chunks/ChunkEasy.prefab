@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChunkController
   _endAnchor: {fileID: 7625152090132061563}
-  _spawnWeight: 30
+  _spawnWeight: 15
 --- !u!1 &4125764898876606072
 GameObject:
   m_ObjectHideFlags: 0

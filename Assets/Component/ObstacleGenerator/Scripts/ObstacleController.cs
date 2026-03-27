@@ -203,9 +203,18 @@ public class ObstacleController : MonoBehaviour
     {
         if (playerLifeCount > 0)
         {
+            // Ignore si un stop est déjà en cours
+            if (_stopped)
+                return;
+
             _stopped = true;
+            _stopDelayTimer = 0f;
+            _translationSpeed = 0;
+            return;
         }
-        
+
+        // Dead : stop permanent
+        _stopped = false;
         _translationSpeed = 0;
     }
     
