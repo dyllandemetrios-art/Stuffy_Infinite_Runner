@@ -11,6 +11,9 @@ public static class EventSystem
     public static Action<float> OnSpeedUpdated;       // Fired when the chunk translation speed changes.
     public static Action<int> OnScoreUpdated;         // Fired each frame with the current score in metres.
     public static Action<float> OnPlayerInvincibilityStarted; // Fired when invincibility starts, passes duration in seconds.
+    public static Action<int> OnComponentCollected; // Fired when the player collects an electronic component.
+    public static Action<int> OnComponentCountUpdated; // Fired when the total component count changes.
+    public static Action OnPlayerHit; // Fired only on actual obstacle or projectile collision, not passive drain.
     
     public static Action<State> OnStateChanged;       // Fired when the state machine transitions to a new state.
 }

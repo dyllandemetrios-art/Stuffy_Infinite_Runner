@@ -149,9 +149,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LifeController
   _maxHP: 100
-  _collisionDamage: 15
-  _invincibilityDuration: 1.5
-  _drainPerSecond: 2
+  _collisionDamage: 20
+  _invincibilityDuration: 2
+  _drainPerSecond: 3
 --- !u!4 &70717099
 Transform:
   m_ObjectHideFlags: 0
@@ -338,7 +338,7 @@ MonoBehaviour:
   - {fileID: 281001343}
   - {fileID: 990666905}
   _minBlinkInterval: 0.05
-  _maxBlinkInterval: 0.2
+  _maxBlinkInterval: 0.3
 --- !u!137 &173965259 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 1212270095328881213, guid: 0d7bdd2942440db47b015090a6133bd7, type: 3}
@@ -716,6 +716,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1226662492878353351, guid: 0d7bdd2942440db47b015090a6133bd7, type: 3}
   m_PrefabInstance: {fileID: 1628067486148296561}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1315866206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1315866208}
+  - component: {fileID: 1315866207}
+  m_Layer: 0
+  m_Name: ComponentCounterController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1315866207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315866206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcb8746b77a043b38d5a535d13aa2892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ComponentCounterController
+--- !u!4 &1315866208
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315866206}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &1385084377 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 198135230800400580, guid: 0d7bdd2942440db47b015090a6133bd7, type: 3}
@@ -858,7 +902,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6881970403414436528, guid: 0d7bdd2942440db47b015090a6133bd7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8374034284864977255, guid: 0d7bdd2942440db47b015090a6133bd7, type: 3}
       propertyPath: m_Name
@@ -894,3 +938,4 @@ SceneRoots:
   - {fileID: 70717099}
   - {fileID: 154011095}
   - {fileID: 236779140}
+  - {fileID: 1315866208}

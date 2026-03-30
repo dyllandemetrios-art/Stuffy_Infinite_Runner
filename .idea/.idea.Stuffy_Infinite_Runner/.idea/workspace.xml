@@ -5,9 +5,73 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92330fb4-07b2-4e68-a03c-541aba764df4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Component/Skills.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Component/Skills/Prefabs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Component/Skills/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Component/Skills/Scripts/ComponentCounterController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Component/Skills/Scripts/ComponentCounterController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Component/Skills/Scripts/ComponentPickupController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Component/Skills/Scripts/ComponentPickupController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Component/Skills/Scripts/UIComponentCounterController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Component/Skills/Scripts/UIComponentCounterController.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Stuffy_Infinite_Runner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Stuffy_Infinite_Runner/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Demo Scene/Materials/FloorMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Demo Scene/Materials/FloorMaterial.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Demo Scene/Materials/ThrowingRock.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Demo Scene/Materials/ThrowingRock.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Demo Scene/Materials/ThrowingRock_Flat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Demo Scene/Materials/ThrowingRock_Flat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture01/Giant01_Texture01 Recolor01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture01/Giant01_Texture01 Recolor01.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture01/Giant01_Texture01 Recolor02.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture01/Giant01_Texture01 Recolor02.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture01/Giant01_Texture01 Recolor03.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture01/Giant01_Texture01 Recolor03.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture01/Giant01_Texture01 Recolor04.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture01/Giant01_Texture01 Recolor04.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture01/Giant01_Texture01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture01/Giant01_Texture01.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture02/Giant01_Texture02 Recolor01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture02/Giant01_Texture02 Recolor01.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture02/Giant01_Texture02 Recolor02.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture02/Giant01_Texture02 Recolor02.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture02/Giant01_Texture02 Recolor03.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture02/Giant01_Texture02 Recolor03.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture02/Giant01_Texture02 Recolor04.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture02/Giant01_Texture02 Recolor04.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture02/Giant01_Texture02.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01/Giant01_Texture02/Giant01_Texture02.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01_Flat/Giant01_Texture01_Flat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01_Flat/Giant01_Texture01_Flat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01_Flat/Giant01_Texture02_Flat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01_Flat/Giant01_Texture02_Flat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01_Flat/Giant01_Texture03_Flat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01_Flat/Giant01_Texture03_Flat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01_Flat/Giant01_Texture04_Flat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01_Flat/Giant01_Texture04_Flat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01_Flat/Giant01_Texture05_Flat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3D_Assets/Kevin Iglesias/Characters/Humanoid Giant/Materials/Giant01_Flat/Giant01_Texture05_Flat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/Ennemy/Scripts/EnnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/Ennemy/Scripts/EnnemyController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/EventSystem/EventSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/EventSystem/EventSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/Life/LifeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/Life/LifeController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/ChunkEasy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/ChunkEasy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/ChunkGolem1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/ChunkGolem1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/ChunkGolem2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/ChunkGolem2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/ChunkHard1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/ChunkHard1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/ChunkSoft1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/ChunkSoft1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/ChunkSoft2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/ChunkSoft2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/ChunkSoft3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/ChunkSoft3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Obstacles/CaseObstacle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Obstacles/CaseObstacle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Obstacles/ManholeObstacle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Obstacles/ManholeObstacle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Obstacles/PineObstacle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Obstacles/PineObstacle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Obstacles/PineObstacle2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Obstacles/PineObstacle2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Obstacles/TrashesObstacle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Obstacles/TrashesObstacle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Pickups/Trash_bag_pickup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Pickups/Trash_bag_pickup.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Scripts/ObstacleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Scripts/ObstacleController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/Player/Scripts/PlayerCollisionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/Player/Scripts/PlayerCollisionController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/Player/Scripts/PlayerMovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/Player/Scripts/PlayerMovementController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/SaveService/SaveData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/SaveService/SaveData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/StateMachine/Scripts/GameState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/StateMachine/Scripts/GameState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/Stats.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/Stats/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/Stats/Scripts/StatsModifierController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/Stats/Scripts/StatsModifierController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelUI.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelUI.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Materials/Crate - Surface Shader Scene.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Materials/Crate - Surface Shader Scene.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Materials/Ground - Logo Scene.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Materials/Ground - Logo Scene.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Materials/Ground - Surface Shader Scene.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Materials/Ground - Surface Shader Scene.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Materials/Small Crate_diffuse.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Materials/Small Crate_diffuse.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Build.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Build_Web/Build/Build_Web.data.br" beforeDir="false" afterPath="$PROJECT_DIR$/Build_Web/Build/Build_Web.data.br" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Build_Web/Build/Build_Web.loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Build_Web/Build/Build_Web.loader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Build_Web/Build/Build_Web.wasm.br" beforeDir="false" afterPath="$PROJECT_DIR$/Build_Web/Build/Build_Web.wasm.br" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Build_Web/Build_Web.zip" beforeDir="false" afterPath="$PROJECT_DIR$/Build_Web/Build_Web.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +99,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Component/SceneLoader/SceneLoaderService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Component/Score/ScoreController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Component/Score/UIScoreController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Component/Skills/Scripts/UIComponentCounterController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Component/StateMachine/Scripts/CountdownState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Component/StateMachine/Scripts/GameOverState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Component/StateMachine/Scripts/GameState.cs" root0="FORCE_HIGHLIGHTING" />
@@ -155,7 +220,9 @@
       <workItem from="1774434566155" duration="605000" />
       <workItem from="1774460817115" duration="2719000" />
       <workItem from="1774515295044" duration="4519000" />
-      <workItem from="1774603131788" duration="5448000" />
+      <workItem from="1774603131788" duration="6103000" />
+      <workItem from="1774778360002" duration="1715000" />
+      <workItem from="1774861176066" duration="5757000" />
     </task>
     <servers />
   </component>

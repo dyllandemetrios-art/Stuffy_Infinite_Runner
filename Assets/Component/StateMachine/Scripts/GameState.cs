@@ -23,7 +23,6 @@ public class GameState : State
         _timer += Time.deltaTime;
     }
 
-    /// <summary>Saves a new best time if the current run beat the record, then unsubscribes from events.</summary>
     public override void Exit()
     {
         var saveData = SaveService.Load();
@@ -32,8 +31,9 @@ public class GameState : State
             saveData.BestTime = Timer;
             SaveService.Save(saveData);
         }
-        
-        EventSystem.OnPlayerLifeUpdated += HandlePlayerLifeUpdated;
+
+        // Correctly unsubscribe on exit
+        EventSystem.OnPlayerLifeUpdated -= HandlePlayerLifeUpdated;
     }
     
     /// <summary>Transitions to GameOverState when player life reaches zero.</summary>

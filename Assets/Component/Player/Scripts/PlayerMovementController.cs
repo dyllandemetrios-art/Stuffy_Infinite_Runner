@@ -86,7 +86,7 @@ public class PlayerMovementController : MonoBehaviour
     {
         if (playerLife > 0)
         {
-            _animator.SetTrigger("TakeDamage");
+            // TakeDamage animation removed — blink handles damage feedback
             return;
         }
 
@@ -115,16 +115,18 @@ public class PlayerMovementController : MonoBehaviour
         HandleSlideDown();
     }
 
-    /// <summary>Casts a ray downward to update the ground Y position each frame, ignoring hits during jumps.</summary>
+    /// <summary>Casts a ray downward to update ground Y only when a ground layer surface is hit.</summary>
     private void UpdateGroundY()
     {
-        // Only update ground Y when not jumping to avoid snapping mid-air
+        // Never update ground Y during a jump
         if (_isJumping)
             return;
 
         if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, _groundRaycastDistance, _groundLayer))
         {
-            _groundY = hit.point.y;
+            // Only update if the hit surface is very close to the known ground level
+            if (Mathf.Abs(hit.point.y - _groundY) < 0.1f)
+                _groundY = hit.point.y;
         }
     }
 
@@ -235,6 +237,10 @@ public class PlayerMovementController : MonoBehaviour
     {
         _isJumping = true;
         _animator.SetBool("IsJumping", true);
+
+        // Capture ground Y before jumping to guarantee correct landing position
+        float jumpGroundY = _groundY;
+
         float jumpTimer = 0f;
         float halfJumpDuration = _jumpDuration / 2f;
 
@@ -243,7 +249,7 @@ public class PlayerMovementController : MonoBehaviour
         {
             jumpTimer += Time.deltaTime;
             var normalizedTime = jumpTimer / halfJumpDuration;
-            var targetHeight = _groundY + _jumpCurve.Evaluate(normalizedTime) * _jumpHeight;
+            var targetHeight = jumpGroundY + _jumpCurve.Evaluate(normalizedTime) * _jumpHeight;
             transform.position = new Vector3(transform.position.x, targetHeight, transform.position.z);
             yield return null;
         }
@@ -256,13 +262,14 @@ public class PlayerMovementController : MonoBehaviour
         {
             jumpTimer += Time.deltaTime;
             var normalizedTime = jumpTimer / halfJumpDuration;
-            var targetHeight = _groundY + _fallCurve.Evaluate(normalizedTime) * _jumpHeight;
+            var targetHeight = jumpGroundY + _fallCurve.Evaluate(normalizedTime) * _jumpHeight;
             transform.position = new Vector3(transform.position.x, targetHeight, transform.position.z);
             yield return null;
         }
 
-        // Snap to ground to avoid floating point drift
-        transform.position = new Vector3(transform.position.x, _groundY, transform.position.z);
+        // Always snap back to the exact ground Y captured before jump
+        transform.position = new Vector3(transform.position.x, jumpGroundY, transform.position.z);
+        _groundY = jumpGroundY;
         _isJumping = false;
         _animator.SetBool("IsJumping", false);
     }

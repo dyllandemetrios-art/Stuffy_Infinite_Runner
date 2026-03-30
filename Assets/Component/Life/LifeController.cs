@@ -69,6 +69,10 @@ public class LifeController : MonoBehaviour
     /// <summary>Applies collision damage, triggers invincibility, and fires Game Over if HP reaches zero.</summary>
     private void HandlePlayerCollision()
     {
+        // Ignore collisions after game over
+        if (!_inGameState)
+            return;
+        
         if (_isInvincible)
             return;
 
@@ -84,6 +88,7 @@ public class LifeController : MonoBehaviour
             return;
         }
 
+        EventSystem.OnPlayerHit?.Invoke();
         EventSystem.OnPlayerLifeUpdated?.Invoke((int)_currentHP);
         EventSystem.OnPlayerInvincibilityStarted?.Invoke(_invincibilityDuration);
         StartCoroutine(InvincibilityCoroutine());

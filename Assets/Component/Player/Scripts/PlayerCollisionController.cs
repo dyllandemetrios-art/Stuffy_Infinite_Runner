@@ -41,16 +41,35 @@ public class PlayerCollisionController : MonoBehaviour
             if (hit.CompareTag("Pickup"))
             {
                 hit.GetComponent<PickupController>()?.Collect();
+                continue;
             }
-            else if (!_isHit)
+
+            if (hit.CompareTag("Component"))
+            {
+                hit.GetComponent<ComponentPickupController>()?.Collect();
+                continue;
+            }
+
+            if (!_isHit)
             {
                 EventSystem.OnPlayerCollision?.Invoke();
                 _isHit = true;
-                Debug.Log(hit.name);
+            }
+
+            break;
+        }
+
+        bool hasObstacleContact = false;
+        foreach (var hit in hitColliders)
+        {
+            if (!hit.CompareTag("Pickup") && !hit.CompareTag("Component"))
+            {
+                hasObstacleContact = true;
+                break;
             }
         }
 
-        if (hitColliders.Length == 0)
+        if (!hasObstacleContact)
             _isHit = false;
     }
 

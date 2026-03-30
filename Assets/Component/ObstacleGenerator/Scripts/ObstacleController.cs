@@ -47,7 +47,7 @@ public class ObstacleController : MonoBehaviour
     /// <summary>Unsubscribes from all events to prevent memory leaks.</summary>
     private void OnDestroy()
     {
-        EventSystem.OnPlayerLifeUpdated -= HandlePlayerLifeUpdated;
+        EventSystem.OnPlayerHit -= HandlePlayerHit;
         EventSystem.OnStateChanged -= HandleStateChanged;
     }
 
@@ -198,23 +198,14 @@ public class ObstacleController : MonoBehaviour
         return _instancedChunks[_instancedChunks.Count - 1];
     }
     
-    /// <summary>Stops world movement on player hit, or zeroes speed permanently on player death.</summary>
-    private void HandlePlayerLifeUpdated(int playerLifeCount)
+    /// <summary>Briefly stops world movement on obstacle hit.</summary>
+    private void HandlePlayerHit()
     {
-        if (playerLifeCount > 0)
-        {
-            // Ignore si un stop est déjà en cours
-            if (_stopped)
-                return;
-
-            _stopped = true;
-            _stopDelayTimer = 0f;
-            _translationSpeed = 0;
+        if (_stopped)
             return;
-        }
 
-        // Dead : stop permanent
-        _stopped = false;
+        _stopped = true;
+        _stopDelayTimer = 0f;
         _translationSpeed = 0;
     }
     
@@ -223,7 +214,7 @@ public class ObstacleController : MonoBehaviour
     {
         if (newState is not GameState gameState)
         {
-            EventSystem.OnPlayerLifeUpdated -= HandlePlayerLifeUpdated;
+            EventSystem.OnPlayerHit -= HandlePlayerHit;
             _inGameState = false;
             return;
         }
@@ -231,7 +222,7 @@ public class ObstacleController : MonoBehaviour
         _gameState = gameState;
         _translationSpeed = _baseTranslationSpeed;
         EventSystem.OnSpeedUpdated?.Invoke(_translationSpeed);
-        EventSystem.OnPlayerLifeUpdated += HandlePlayerLifeUpdated;
+        EventSystem.OnPlayerHit += HandlePlayerHit;
         _inGameState = true;
     }
 }
