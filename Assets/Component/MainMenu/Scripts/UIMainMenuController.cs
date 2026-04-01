@@ -8,6 +8,9 @@ public class UIMainMenuController : MonoBehaviour
 {
     [SerializeField] private TMP_Text _runCountText; // Displays the total number of attempts from save data.
     [SerializeField] private TMP_Text _bestTimeText; // Displays the best run time or a fallback message.
+    [SerializeField] private GameObject _skillShopPanel; // Reference to the skill shop panel GameObject.
+    [SerializeField] private GameObject _firstSelected; // First button focused on menu open.
+    
     private SaveData _saveData; // Cached save data loaded on menu start.
     
     /// <summary>Loads save data and populates the run count and best time display on menu open.</summary>
@@ -15,6 +18,7 @@ public class UIMainMenuController : MonoBehaviour
     {
         _saveData = SaveService.Load();
         _runCountText.text = "Attempts: " + _saveData.RunCount;
+        _skillShopPanel.SetActive(false);
 
         if (_saveData.BestTime == 0)
         {
@@ -25,8 +29,22 @@ public class UIMainMenuController : MonoBehaviour
             var timeSpan = new TimeSpan(0, 0, _saveData.BestTime);
             _bestTimeText.text = "Best Time: " + timeSpan.Minutes.ToString("00") + ":" + timeSpan.Seconds.ToString("00");
         }
+        
+        UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(_firstSelected);
     }
 
+    /// <summary>Opens the skill shop panel.</summary>
+    public void OpenSkillShop()
+    {
+        _skillShopPanel.SetActive(true);
+    }
+
+    /// <summary>Closes the skill shop panel.</summary>
+    public void CloseSkillShop()
+    {
+        _skillShopPanel.SetActive(false);
+    }
+    
     /// <summary>Increments the run count, saves it to disk, then loads the game scene.</summary>
     public void StartGame()
     {

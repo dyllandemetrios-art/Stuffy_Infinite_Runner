@@ -4,6 +4,7 @@
 public class UIGameOverController : MonoBehaviour
 {
     [SerializeField] private GameObject _gameOverScreen; // Root panel shown only when the game is over.
+    [SerializeField] private GameObject _firstSelected; // First button focused on menu open.
     
     /// <summary>Hides the game over screen and subscribes to state change events on initialization.</summary>
     private void Awake()
@@ -12,6 +13,11 @@ public class UIGameOverController : MonoBehaviour
         EventSystem.OnStateChanged += HandleStateChanged;
     }
 
+    private void Start()
+    {
+        UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(_firstSelected);
+    }
+    
     /// <summary>Unsubscribes from state events to prevent memory leaks.</summary>
     private void OnDestroy()
     {

@@ -15,6 +15,10 @@ public class LifeController : MonoBehaviour
     private float _currentHP;   // Current HP value during the run.
     private bool _isInvincible; // True during the invincibility window after a hit.
     private bool _inGameState;  // True only while the game is in an active run.
+    
+    [Header("Skills")]
+    private float _healAmount = 15f;       // HP restored per waste pickup, modified by SkillRecovery.
+    private float _damageMultiplier = 1f;  // Damage multiplier, reduced by SkillArmor.
 
     /// <summary>Subscribes to state and collision events on initialization.</summary>
     private void Start()
@@ -76,7 +80,7 @@ public class LifeController : MonoBehaviour
         if (_isInvincible)
             return;
 
-        _currentHP -= _collisionDamage;
+        _currentHP -= _collisionDamage * _damageMultiplier;
         _currentHP = Mathf.Max(_currentHP, 0f);
 
         EventSystem.OnPlayerHPUpdated?.Invoke(_currentHP);
@@ -102,10 +106,24 @@ public class LifeController : MonoBehaviour
         _isInvincible = false;
     }
     
-    /// <summary>Adds heal amount to current HP without exceeding the maximum.</summary>
+    /// <summary>Adds skill-modified heal amount to current HP without exceeding the maximum.</summary>
     private void HandlePlayerHealed(float healAmount)
     {
-        _currentHP = Mathf.Min(_currentHP + healAmount, _maxHP);
+        _currentHP = Mathf.Min(_currentHP + _healAmount, _maxHP);
+        EventSystem.OnPlayerHPUpdated?.Invoke(_currentHP);
+    }
+    
+    /// <summary>Receives skill values from SkillApplierController and overrides base stats for the run.</summary>
+    public void ApplySkills(float maxHP, float healAmount, float damageMultiplier, float invincibilityDuration, float drainPerSecond)
+    {
+        _maxHP = maxHP;
+        _healAmount = healAmount;
+        _damageMultiplier = damageMultiplier;
+        _invincibilityDuration = invincibilityDuration;
+        _drainPerSecond = drainPerSecond;
+
+        // Reset HP to new max at run start
+        _currentHP = _maxHP;
         EventSystem.OnPlayerHPUpdated?.Invoke(_currentHP);
     }
 }

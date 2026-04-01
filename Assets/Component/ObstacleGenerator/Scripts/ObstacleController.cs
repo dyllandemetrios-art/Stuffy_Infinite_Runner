@@ -6,8 +6,8 @@ using Random = UnityEngine.Random;
 public class ObstacleController : MonoBehaviour
 {
     [Header("Parameters")]
-    [SerializeField, Tooltip("Translation speed of chunks in m/s")] private float _translationSpeed = 3f;
-    [SerializeField] private int _activeChunkCount = 5;   // Number of chunks kept active ahead of the player.
+    [SerializeField, Tooltip("Translation speed of chunks in m/s")] private float _translationSpeed = 7f;
+    [SerializeField] private int _activeChunkCount = 6;   // Number of chunks kept active ahead of the player.
     [SerializeField] private int _behindChunkCount = 1;   // Number of passed chunks to keep before destroying them.
     [SerializeField] private float _stopDelayOnDamage = 0.2f; // Duration in seconds the world stops moving after the player takes damage.
     
@@ -16,7 +16,7 @@ public class ObstacleController : MonoBehaviour
 
     [Header("Speed Up")]
     [SerializeField] private float _maxTranslationSpeed = 14f;          // Speed cap in m/s (GDD: 14 m/s).
-    [SerializeField] private float _speedUpInterval = 15f;              // Seconds between each speed increase.
+    [SerializeField] private float _speedUpInterval = 10f;              // Seconds between each speed increase.
     [SerializeField] private float _speedUpPercentage = 0.08f;          // Speed increase as a percentage of current speed (8% = smooth curve).
     
     private readonly List<ChunkController> _instancedChunks = new(); // Currently active chunk instances in the scene.
@@ -85,18 +85,19 @@ public class ObstacleController : MonoBehaviour
         var gameTimer = _gameState.Timer;
         if (gameTimer != 0 && gameTimer % _speedUpInterval == 0 && gameTimer != _lastSpeedUpTime)
         {
-            // Increase by percentage of current speed for a natural exponential curve
-            _translationSpeed += _translationSpeed * _speedUpPercentage;
+            // Only apply speed up if currently moving to avoid 0 * percentage = 0 bug
+            if (_baseTranslationSpeed > 0)
+            {
+                _translationSpeed += _baseTranslationSpeed * _speedUpPercentage;
+                _translationSpeed = Mathf.Min(_translationSpeed, _maxTranslationSpeed);
+                _baseTranslationSpeed = _translationSpeed;
+                _lastSpeedUpTime = gameTimer;
 
-            // Apply speed cap
-            _translationSpeed = Mathf.Min(_translationSpeed, _maxTranslationSpeed);
-            _baseTranslationSpeed = _translationSpeed;
-            _lastSpeedUpTime = gameTimer;
-
-            EventSystem.OnSpeedUpdated?.Invoke(_translationSpeed);
-            Debug.Log("[ObstacleController] Speed: " + _translationSpeed);
+                EventSystem.OnSpeedUpdated?.Invoke(_translationSpeed);
+                Debug.Log("[ObstacleController] Speed: " + _translationSpeed);
+            }
         }
-        
+    
         foreach (var chunk in _instancedChunks)
         {
             chunk.transform.Translate(Vector3.back * (_translationSpeed * Time.deltaTime));
