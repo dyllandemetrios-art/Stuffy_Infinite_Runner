@@ -115,18 +115,15 @@ public class PlayerMovementController : MonoBehaviour
         HandleSlideDown();
     }
 
-    /// <summary>Casts a ray downward to update ground Y only when a ground layer surface is hit.</summary>
+    /// <summary>Casts a ray downward to update ground Y position each frame, only when not jumping.</summary>
     private void UpdateGroundY()
     {
-        // Never update ground Y during a jump
         if (_isJumping)
             return;
 
         if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, _groundRaycastDistance, _groundLayer))
         {
-            // Only update if the hit surface is very close to the known ground level
-            if (Mathf.Abs(hit.point.y - _groundY) < 0.1f)
-                _groundY = hit.point.y;
+            _groundY = hit.point.y;
         }
     }
 

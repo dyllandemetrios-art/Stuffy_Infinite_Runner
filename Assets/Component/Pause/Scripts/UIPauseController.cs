@@ -6,7 +6,7 @@ using UnityEngine;
 public class UIPauseController : MonoBehaviour
 {
     [SerializeField] private GameObject _pausePanel; // Root panel shown only when the game is paused.
-    [SerializeField] private GameObject _firstSelected; // First button focused on menu open.
+    [SerializeField] private GameObject _firstSelectedPause; // First button focused on menu open.
     
     private bool _isPaused; // Tracks whether the game is currently paused.
 
@@ -15,11 +15,6 @@ public class UIPauseController : MonoBehaviour
     {
         _pausePanel.SetActive(false);
         EventSystem.OnStateChanged += HandleStateChanged;
-    }
-
-    private void Start()
-    {
-        UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(_firstSelected);
     }
     
     /// <summary>Unsubscribes from state events to prevent memory leaks.</summary>
@@ -59,6 +54,7 @@ public class UIPauseController : MonoBehaviour
         _isPaused = true;
         Time.timeScale = 0f;
         _pausePanel.SetActive(true);
+        UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(_firstSelectedPause);
     }
 
     /// <summary>Resumes the game by restoring time and hiding the pause panel.</summary>

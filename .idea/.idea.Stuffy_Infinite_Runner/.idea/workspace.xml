@@ -5,28 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92330fb4-07b2-4e68-a03c-541aba764df4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Component/Pause.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Component/Pause/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Component/Pause/Scripts/UIPauseController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Component/Pause/Scripts/UIPauseController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Component/Skills/Scripts/SkillApplierController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Component/Skills/Scripts/SkillApplierController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Component/Skills/Scripts/SkillShopController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Component/Skills/Scripts/SkillShopController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Component/Skills/Scripts/SkillType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Component/Skills/Scripts/SkillType.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Component/Skills/Scripts/UISkillButtonController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Component/Skills/Scripts/UISkillButtonController.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Stuffy_Infinite_Runner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Stuffy_Infinite_Runner/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/EventSystem/EventSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/EventSystem/EventSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/GameOver/Scripts/UIGameOverController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/GameOver/Scripts/UIGameOverController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/Life/LifeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/Life/LifeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/MainMenu/Scripts/UIMainMenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/MainMenu/Scripts/UIMainMenuController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Scripts/ObstacleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Scripts/ObstacleController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelUI.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelUI.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/ChunkEasy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/ChunkEasy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/ChunkGolem1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/ChunkGolem1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/ChunkGolem2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/ChunkGolem2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/ChunkHard1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/ChunkHard1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/ChunkSoft1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/ChunkSoft1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/ChunkSoft2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/ChunkSoft2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/ChunkSoft3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/ObstacleGenerator/Prefabs/Chunks/ChunkSoft3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Component/Pause/Scripts/UIPauseController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Component/Pause/Scripts/UIPauseController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Build_Web/Build/Build_Web.data.br" beforeDir="false" afterPath="$PROJECT_DIR$/Build_Web/Build/Build_Web.data.br" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Build_Web/Build/Build_Web.framework.js.br" beforeDir="false" afterPath="$PROJECT_DIR$/Build_Web/Build/Build_Web.framework.js.br" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Build_Web/Build/Build_Web.loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Build_Web/Build/Build_Web.loader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Build_Web/Build/Build_Web.wasm.br" beforeDir="false" afterPath="$PROJECT_DIR$/Build_Web/Build/Build_Web.wasm.br" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Build_Web/Build_Web.zip" beforeDir="false" afterPath="$PROJECT_DIR$/Build_Web/Build_Web.zip" afterDir="false" />
@@ -190,6 +179,8 @@
       <workItem from="1774887200297" duration="2823000" />
       <workItem from="1774968988667" duration="600000" />
       <workItem from="1775009348106" duration="4388000" />
+      <workItem from="1775062792726" duration="306000" />
+      <workItem from="1775205707173" duration="871000" />
     </task>
     <servers />
   </component>
