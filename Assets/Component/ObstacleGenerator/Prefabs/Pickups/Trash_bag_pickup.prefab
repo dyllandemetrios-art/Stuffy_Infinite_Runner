@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7590987622667434691}
   - component: {fileID: 5673528720584494601}
   - component: {fileID: 7089679079805255895}
-  - component: {fileID: -541762509454396319}
   - component: {fileID: 8038493616108002611}
+  - component: {fileID: -541762509454396319}
   m_Layer: 6
   m_Name: Trash_bag_pickup
   m_TagString: Pickup
@@ -114,19 +114,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.7439969, y: 0.85660785, z: 0.7527132}
   m_Center: {x: -0.031277657, y: 0.3236054, z: 0.049411476}
---- !u!114 &-541762509454396319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6177971393326870492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 405a240896f4447c9c3f989e50eb8526, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupController
-  _healAmount: 15
 --- !u!54 &8038493616108002611
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -154,3 +141,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-541762509454396319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6177971393326870492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 405a240896f4447c9c3f989e50eb8526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupController
+  _healAmount: 10

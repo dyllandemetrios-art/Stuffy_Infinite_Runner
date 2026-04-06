@@ -149,9 +149,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LifeController
   _maxHP: 100
-  _collisionDamage: 20
+  _collisionDamage: 25
   _invincibilityDuration: 2
-  _drainPerSecond: 3
+  _drainPerSecond: 5
 --- !u!4 &70717099
 Transform:
   m_ObjectHideFlags: 0
@@ -854,7 +854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66eceebb0cf80b849858d085ae0c0efd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleController
-  _translationSpeed: 7
+  _translationSpeed: 9
   _activeChunkCount: 6
   _behindChunkCount: 1
   _stopDelayOnDamage: 0.2
@@ -866,9 +866,9 @@ MonoBehaviour:
   - {fileID: 3412098169515730771, guid: f47a4452df6b2f14d8b3ed55b0e2d3c8, type: 3}
   - {fileID: 3412098169515730771, guid: 535bd07b9bd505f44bf1ce688792bb09, type: 3}
   - {fileID: 3412098169515730771, guid: e64941b86b8358c4a9fc8572c86c49bb, type: 3}
-  _maxTranslationSpeed: 14
+  _maxTranslationSpeed: 16
   _speedUpInterval: 10
-  _speedUpPercentage: 0.08
+  _speedUpPercentage: 0.12
 --- !u!4 &1994810971
 Transform:
   m_ObjectHideFlags: 0

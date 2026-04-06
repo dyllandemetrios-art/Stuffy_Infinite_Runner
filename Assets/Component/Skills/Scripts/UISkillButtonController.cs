@@ -8,6 +8,7 @@ public class UISkillButtonController : MonoBehaviour
     [SerializeField] private SkillType _skillType;          // Skill this button represents, set in Inspector.
     [SerializeField] private TMP_Text _levelText;           // Displays current level (e.g. "Level 2 / 3").
     [SerializeField] private TMP_Text _costText;            // Displays next level cost or "MAX" if maxed.
+    [SerializeField] private TMP_Text _descriptionText;     // Displays skill effect description.
     [SerializeField] private Button _buyButton;             // Button to trigger purchase.
     [SerializeField] private SkillShopController _shop;     // Reference to the shop controller.
 
@@ -21,14 +22,24 @@ public class UISkillButtonController : MonoBehaviour
         new[] { 15, 30, 50 }, // Optimization
     };
 
-    /// <summary>Subscribes to skill state updates on initialization.</summary>
-    private void Awake()
+    // Descriptions per skill and level
+    private static readonly string[][] AllDescriptions =
+    {
+        new[] { "Max HP : 110", "Max HP : 125", "Max HP : 150" },                          // Health
+        new[] { "Heal : +10 HP", "Heal : +12 HP", "Heal : +15 HP" },                      // Recovery
+        new[] { "Armor : -10%", "Armor : -20%", "Armor : -30%" },                         // Armor
+        new[] { "Invincibility : 2s", "Invincibility : 2.5s", "Invincibility : 3s" },     // Stabilizer
+        new[] { "Drain : -1.8/s", "Drain : -1.5/s", "Drain : -1.2/s" },                  // Optimization
+    };
+
+    /// <summary>Subscribes to skill state updates when the button becomes active.</summary>
+    private void OnEnable()
     {
         EventSystem.OnSkillStateUpdated += HandleSkillStateUpdated;
     }
 
-    /// <summary>Unsubscribes from skill state events to prevent memory leaks.</summary>
-    private void OnDestroy()
+    /// <summary>Unsubscribes from skill state events when the button becomes inactive.</summary>
+    private void OnDisable()
     {
         EventSystem.OnSkillStateUpdated -= HandleSkillStateUpdated;
     }
@@ -41,6 +52,14 @@ public class UISkillButtonController : MonoBehaviour
             return;
 
         _levelText.text = "Level " + currentLevel + " / 3";
+
+        // Update description based on current level
+        if (currentLevel == 0)
+            _descriptionText.text = "Next : " + AllDescriptions[(int)_skillType][0];
+        else if (currentLevel >= 3)
+            _descriptionText.text = AllDescriptions[(int)_skillType][2];
+        else
+            _descriptionText.text = "Next : " + AllDescriptions[(int)_skillType][currentLevel];
 
         if (currentLevel >= 3)
         {
