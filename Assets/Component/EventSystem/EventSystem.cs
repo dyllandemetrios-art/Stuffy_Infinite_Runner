@@ -15,6 +15,7 @@ public static class EventSystem
     public static Action<int> OnComponentCountUpdated; // Fired when the total component count changes.
     public static Action OnPlayerHit; // Fired only on actual obstacle or projectile collision, not passive drain.
     public static Action<SkillType, int, int> OnSkillStateUpdated; // Fired when a skill level changes — passes skill type, current level, and available components.
+    public static Action<float> OnMaxHPUpdated; // Fired when max HP changes due to skill upgrades.
     
     public static Action<State> OnStateChanged;       // Fired when the state machine transitions to a new state.
 }

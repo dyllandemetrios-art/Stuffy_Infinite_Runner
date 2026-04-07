@@ -702,6 +702,64 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &700835425
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 700835427}
+  - component: {fileID: 700835426}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &700835426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700835425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44cf52af2f444ec0afe3994f6ad6f508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  _menuMusic: {fileID: 8300000, guid: 0ddab2aa969a008499ab0acba5ec7edb, type: 3}
+  _gameplayMusic: {fileID: 8300000, guid: a7dbd80f0c9af0e4fa9c337c20719399, type: 3}
+  _gameOverMusic: {fileID: 8300000, guid: beb96d08d2c5b3443831fc4a7f66f045, type: 3}
+  _jumpSound: {fileID: 8300000, guid: 111fa98311546d44a90ae214a3df271f, type: 3}
+  _damageSound: {fileID: 8300000, guid: 52608d18bd2bbce4393eb2464517f08f, type: 3}
+  _deathSound: {fileID: 8300000, guid: dfd4335881a99934999aa4fd7cbd6eab, type: 3}
+  _wastePickupSound: {fileID: 8300000, guid: 1d7f21c78cce7214fbe1dd7f7c6c76bf, type: 3}
+  _componentPickupSound: {fileID: 8300000, guid: 70c8314d8a0c1ee48b949a42ab414cdd, type: 3}
+  _projectileSound: {fileID: 8300000, guid: 111fa98311546d44a90ae214a3df271f, type: 3}
+  _clickSound: {fileID: 8300000, guid: cb95a1bffb7238a49994044e31b7e749, type: 3}
+  _purchaseSound: {fileID: 8300000, guid: 2309a0c39d3002e418baecb471899f53, type: 3}
+  _masterVolume: 0.5
+  _musicVolume: 0.5
+  _sfxVolume: 0.5
+--- !u!4 &700835427
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700835425}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1096.6615, y: 513.81464, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,7 +915,6 @@ MonoBehaviour:
   _translationSpeed: 9
   _activeChunkCount: 6
   _behindChunkCount: 1
-  _stopDelayOnDamage: 0.2
   _chunksPool:
   - {fileID: 3412098169515730771, guid: 9b321e19beab3da44b4b0dd1604585ae, type: 3}
   - {fileID: 3412098169515730771, guid: 8e2a33672197c7743866858bcdadbb83, type: 3}
@@ -985,3 +1042,4 @@ SceneRoots:
   - {fileID: 236779140}
   - {fileID: 1315866208}
   - {fileID: 340322398}
+  - {fileID: 700835427}

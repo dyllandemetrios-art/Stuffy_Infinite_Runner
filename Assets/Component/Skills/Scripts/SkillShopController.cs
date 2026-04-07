@@ -6,6 +6,7 @@ using UnityEngine;
 public class SkillShopController : MonoBehaviour
 {
     [SerializeField] private TMP_Text _componentCountText; // Displays available components in the shop.
+    [SerializeField] private GameObject _firstSelectedShop; // First button refocused after purchase.
 
     // Skill costs per level (GDD pages 27-28)
     private static readonly int[] CostHealth       = { 10, 20, 40 }; // Structural reinforcement costs.
@@ -60,10 +61,12 @@ public class SkillShopController : MonoBehaviour
         // Deduct cost and increment skill level
         _saveData.Components -= cost;
         SetSkillLevel(skillType, currentLevel + 1);
-
+        
+        AudioManager.Instance.PlaySFX(AudioManager.SoundEffect.Purchase);
         SaveService.Save(_saveData);
         BroadcastCurrentState();
-
+        
+        UnityEngine.EventSystems.EventSystem.current?.SetSelectedGameObject(_firstSelectedShop);
         Debug.Log("[SkillShop] Purchased " + skillType + " level " + (currentLevel + 1));
     }
 

@@ -13,18 +13,24 @@ public class UILifeView : MonoBehaviour
     [SerializeField] private Color _colorLow = Color.red;       // Bar color when HP is at or below danger threshold.
     [SerializeField] private float _dangerThreshold = 0.3f;     // Fill ratio below which the bar turns red (GDD: ≤30 HP).
 
-    private float _maxHP = 100f; // Reference max HP for fill ratio calculation.
+    private float _maxHP = 100f;
 
-    /// <summary>Subscribes to HP update events on initialization.</summary>
     private void Awake()
     {
         EventSystem.OnPlayerHPUpdated += HandlePlayerHPUpdated;
+        EventSystem.OnMaxHPUpdated += HandleMaxHPUpdated;
     }
 
-    /// <summary>Unsubscribes from HP update events to prevent memory leaks.</summary>
     private void OnDestroy()
     {
         EventSystem.OnPlayerHPUpdated -= HandlePlayerHPUpdated;
+        EventSystem.OnMaxHPUpdated -= HandleMaxHPUpdated;
+    }
+
+    /// <summary>Updates the max HP reference when skills are applied at run start.</summary>
+    private void HandleMaxHPUpdated(float newMaxHP)
+    {
+        _maxHP = newMaxHP;
     }
 
     /// <summary>Refreshes HP text, bar fill, and color when a new HP value is received.</summary>

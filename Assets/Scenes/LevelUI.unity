@@ -1316,7 +1316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIPauseController
   _pausePanel: {fileID: 110780272}
-  _firstSelected: {fileID: 368084725}
+  _firstSelectedPause: {fileID: 368084725}
 --- !u!1 &715554786
 GameObject:
   m_ObjectHideFlags: 0

@@ -81,14 +81,16 @@ public class PlayerMovementController : MonoBehaviour
         _locked = false;
     }
 
-    /// <summary>Triggers damage or death animation based on remaining player life.</summary>
+    /// <summary>Triggers death animation on player death, damage feedback handled by blink only.</summary>
     private void HandlePlayerLifeUpdated(int playerLife)
     {
         if (playerLife > 0)
-        {
-            // TakeDamage animation removed — blink handles damage feedback
             return;
-        }
+
+        // Snap to ground before stopping coroutines to avoid mid-air freeze
+        transform.position = new Vector3(transform.position.x, _groundY, transform.position.z);
+        _isJumping = false;
+        _animator.SetBool("IsJumping", false);
 
         StopAllCoroutines();
         _animator.SetTrigger("Dead");
@@ -121,7 +123,10 @@ public class PlayerMovementController : MonoBehaviour
         if (_isJumping)
             return;
 
-        if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, _groundRaycastDistance, _groundLayer))
+        // Cast from slightly above current position to avoid missing ground when snapped to it
+        Vector3 rayOrigin = new Vector3(transform.position.x, transform.position.y + 0.05f, transform.position.z);
+
+        if (Physics.Raycast(rayOrigin, Vector3.down, out RaycastHit hit, _groundRaycastDistance, _groundLayer))
         {
             _groundY = hit.point.y;
         }
@@ -232,6 +237,8 @@ public class PlayerMovementController : MonoBehaviour
     /// <summary>Moves player vertically using animation curves relative to the detected ground Y position.</summary>
     private IEnumerator JumpCoroutine()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.SoundEffect.Jump);
+        
         _isJumping = true;
         _animator.SetBool("IsJumping", true);
 

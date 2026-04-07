@@ -86,6 +86,7 @@ public class SkillApplierController : MonoBehaviour
 
         // Apply all values to LifeController
         _lifeController.ApplySkills(maxHP, healAmount, damageMultiplier, invincibilityDuration, drainPerSecond);
+        EventSystem.OnMaxHPUpdated?.Invoke(maxHP);
 
         Debug.Log("[SkillApplier] Skills applied — HP: " + maxHP + " | Heal: " + healAmount + 
                   " | Armor: " + damageMultiplier + " | Invincibility: " + invincibilityDuration + 

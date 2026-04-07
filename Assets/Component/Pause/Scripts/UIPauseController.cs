@@ -52,9 +52,10 @@ public class UIPauseController : MonoBehaviour
     public void Pause()
     {
         _isPaused = true;
-        Time.timeScale = 0f;
         _pausePanel.SetActive(true);
-        UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(_firstSelectedPause);
+        AudioManager.Instance?.PauseMusic();
+        UnityEngine.EventSystems.EventSystem.current?.SetSelectedGameObject(_firstSelectedPause);
+        Time.timeScale = 0f; // Set AFTER panel and selection are ready
     }
 
     /// <summary>Resumes the game by restoring time and hiding the pause panel.</summary>
@@ -63,6 +64,7 @@ public class UIPauseController : MonoBehaviour
         _isPaused = false;
         Time.timeScale = 1f;
         _pausePanel.SetActive(false);
+        AudioManager.Instance.ResumeMusic();
     }
 
     /// <summary>Returns to main menu and ensures time scale is restored before scene load.</summary>
